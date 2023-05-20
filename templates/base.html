@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse" style="height: 90px;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <div style="display: flex; flex-direction: row; justify-items: center; align-items: center;">
+                        <div>
+                            <img src="{{ url_for('static', filename='logo11.png') }}" alt="Logo" width="65" height="60"
+                                class="d-inline-block align-text-top">
+                        </div>
+                        <div style="margin-left: 10px; color: #fff;">Temperature Prediction Model</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <center>
+        <div style="max-width: 350px;">
+            <div>
+                <h5 class="page-header" style="font-size: 20px;">Enter a city name: </h5>
+                <p >
+                    {% block input_form %}
+                    {% endblock input_form %}
+                </p>
+            </div>
+        </div>
+
+        {% block result %}
+        {% endblock result %}
+    </center>
+
+</body>
+
+</html>
